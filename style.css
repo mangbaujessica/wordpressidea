@@ -1,0 +1,190 @@
+/*
+Theme Name: My Theme
+Description: Theme créé dans le cadre du cours de wordpress à Interface3
+Author: Jessica Mangbau
+Requires PHP: 5.4
+Version: 1.0.0
+
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    padding: 0;
+}
+
+
+
+nav {
+    background-color: #006D77;
+    width: 100%;
+    height: 120px;
+    margin-top: 0;
+    position: fixed;
+    box-shadow: 0 3px 2px 0 #c9c8cd;
+}
+#menu-container {
+   position: absolute;
+   top: 0;
+   right: 50px;
+   margin-top: 0;
+   width: 50%;
+   height: 50px;
+   background-color: #006D77;
+   line-height: 50px;
+}
+
+#menu-container .menu-item-has-children>a::after {
+    content: "\f0d7";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    margin-left: 5px;
+}
+
+#menu-container .current-menu-item>a {
+    color:white;
+
+    
+}
+
+#menu-container .current-menu-item>a::before {
+    background-color:white;
+    width: 100%;
+} 
+
+.primary-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    font-family: "Roboto",sans-serif;
+    color: black;
+    font-size: 14px;
+    padding: 0 20px 0 20px;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+ color:#E29578;
+ font-family: "Roboto",sans-serif;
+ font-size: 16px;
+ text-transform: uppercase;
+}
+
+a:visited {
+    color:#E29578;
+
+}
+
+
+/*a:hover {
+        text-decoration: underline;
+} */
+
+nav li {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    padding: 0;
+}
+
+.sub-menu li {
+    height: 30px;
+    border-bottom: 1px solid grey;
+    line-height: 30px;
+    background-color:  #E29578;
+    color: white;
+
+}
+.sub-menu li a:hover {
+    text-decoration: none;
+}
+
+
+.primary-menu li:hover ul {       
+    display: block ;
+        position: absolute;
+        top: 40px;
+   
+    }
+
+.sub-menu a
+{ 
+ text-decoration:none; 
+ color:white;
+ font-family: "Roboto",sans-serif;
+ font-size: 16px;
+ text-transform: lowercase;
+}
+
+
+.primary-menu li a::before{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    transition:all 0.3s cubic-bezier(.17,.67,.83,.67);
+    width:0;
+    height:2px;
+    content:"";
+    background-color: #E29578;
+}
+ 
+.primary-menu li a{
+    position:relative;
+}
+ 
+.primary-menu li a:hover::before{
+    width:100%;
+}
+ 
+.primary-menu .menu-item .sub-menu li a::before{
+content:none;
+}
+ 
+.primary-menu .menu-item .sub-menu li a:hover{
+    border-bottom:2px solid white;
+  
+}
+@media only screen and (max-width: 992px) {
+    .primary-menu {
+        flex-direction: column;
+} nav {
+    height: unset;
+} #menu-container {
+    position: unset;
+    height: unset;
+    width: 100%;
+}
+
+#menu-container>ul li {
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    width: 100%;
+    padding: 0;
+}
+#menu-container>ul>li>.sub-menu {
+    position: unset;
+    border: unset;
+
+} 
+.primary-menu li a::before{
+    top:40px;
+
+}
+}  
